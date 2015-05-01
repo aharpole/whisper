@@ -10,6 +10,7 @@ class RoomsController < ApplicationController
   # GET /rooms/1
   # GET /rooms/1.json
   def show
+    @room = Room.find_by(slug: params[:slug])
   end
 
   # GET /rooms/new
