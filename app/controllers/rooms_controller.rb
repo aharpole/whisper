@@ -11,6 +11,11 @@ class RoomsController < ApplicationController
   # GET /rooms/1.json
   def show
   end
+  
+  def show_by_slug
+    @room = Room.find_by slug:params[:slug]
+    render :show
+  end
 
   # GET /rooms/new
   def new
@@ -64,7 +69,7 @@ class RoomsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_room
-      @room = Room.find_by(slug: params[:slug])
+      @room = Room.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -1,0 +1,15 @@
+<%= link_to "Back to ##{@topic.room.slug}", room_path(@topic.room) %>
+<h1><%= @topic.title %></h1>
+<p><%= @topic.detail %></p>
+
+<h2>Responses</h2>
+<%= render @topic.responses %>
+
+<h3>Add a new response:</h3>
+<%= form_for @topic.responses.new, layout: :horizontal do |f| %>
+  <%= f.hidden_field :topic_id %>
+  <%= f.text_area :detail %>
+  <%= f.submit "Save Response" %>
+<% end %>
+
+

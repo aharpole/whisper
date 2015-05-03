@@ -1,0 +1,9 @@
+<h1>New Topic</h1>
+<p>Your post and its responses are completely anonymous.</p>
+<%= form_for @topic, layout: :horizontal do |f| %>
+  <%= f.hidden_field :room_id %>
+  <%= f.text_field :title %>
+  <%= f.text_area :detail, label: "Details about your topic" %>
+  <!-- <%= f.check_box :email_to_room %> -->
+  <%= f.submit %>
+<% end %>
