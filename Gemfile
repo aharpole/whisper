@@ -45,3 +45,6 @@ group :development, :test do
   gem 'spring'
 end
 
+group :staging, :production do
+  gem 'unicorn'
+end
