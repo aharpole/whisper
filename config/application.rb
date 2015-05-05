@@ -22,5 +22,14 @@ module Whisper
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+      user_name: ENV["MAILER_USER_NAME"],
+      password:  ENV["MAILER_PASSWORD"],
+      address:   ENV["MAILER_ADDRESS"],
+      port:      ENV["MAILER_PORT"],
+      authentication: :cram_md5
+    }
   end
 end
