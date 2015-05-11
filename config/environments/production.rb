@@ -35,7 +35,6 @@ Rails.application.configure do
   # yet still be able to expire them through the digest params.
   config.assets.digest = true
   
-  config.action_mailer.async = true
   config.active_job.queue_adapter = :sidekiq
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb

@@ -5,7 +5,7 @@ class Topic < ActiveRecord::Base
   
   private def send_email
     if email_to_room?
-      TopicMailer.new_topic(self,room.email_addresses).deliver
+      TopicMailer.new_topic(self,room.email_addresses).deliver_later
     end
   end
 end
