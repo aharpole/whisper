@@ -50,4 +50,5 @@ end
 
 group :staging, :production do
   gem 'unicorn'
+  gem 'sidekiq'
 end
