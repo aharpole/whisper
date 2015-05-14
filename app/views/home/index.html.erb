@@ -1,2 +1,13 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= image_tag 'logo', class:'center-block', size:'320x320' %>
+
+<p class='lead'>
+  Whisper is a place you can go to voice your thoughts and ideas to your team anonymously.
+</p>
+
+<h2>
+  Check out one of the rooms below!
+</h2>
+
+<% Room.all.each do |room| %>
+  <h3><%= link_to "##{room.slug}", room_path(room) %></h3>
+<% end %>

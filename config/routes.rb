@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
   get 'home/index'
   resources :rooms do
     resources :topics, only: :new
